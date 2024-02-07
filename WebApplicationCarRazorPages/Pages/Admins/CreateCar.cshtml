@@ -1,0 +1,45 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2 class="tabledata">Lägg till ny bil</h2>
+<hr />
+
+<div class="tabledata">
+    
+        <form method="post">
+            <div>
+              <input asp-for="Car.Brand" class="input-form" placeholder="Ange märke" />
+                <span asp-validation-for="Car.Brand"></span>
+            </div>
+            <div>
+                <input asp-for="Car.Model" class="input-form" placeholder="Ange modell" />
+                <span asp-validation-for="Car.Model"></span>
+            </div>
+            <div>
+               
+                <input asp-for="Car.PictureLink" class="input-form" placeholder="Lägg till en bildlänk"/>
+                <span asp-validation-for="Car.PictureLink"></span>
+            </div>
+        <div>
+            <input asp-for="Car.PricePerDay" class="input-form" placeholder="Ange pris/dag" />
+            <span asp-validation-for="Car.Model"></span>
+        </div>
+            <div>
+                <input type="submit" value="Spara" class="small button function" />
+            </div>
+        </form>
+    </>
+</div>
+
+<button class="button function">
+    <a asp-page="ViewCars">Tillbaka till översikt</a>
+</button>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

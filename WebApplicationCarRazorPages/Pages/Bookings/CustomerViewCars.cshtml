@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.CustomerViewCarsModel
+
+@{
+    ViewData["Title"] = "Tillgängliga bilar";
+}
+
+<h2 class="tabledata">Sortiment</h2>
+
+
+<table class="tabledata">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Id)
+            </th>
+            <hr />
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].PricePerDay)
+            </th>
+           
+           
+        </tr>
+    </thead>
+    
+    <tbody>
+@foreach (var item in Model.Car) {
+            <tr>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td class="tabledata">
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td >
+                <td class="tabledata">
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+                <td class="tabledata">
+                @Html.DisplayFor(modelItem => item.PricePerDay)
+            </td>
+                
+                <td class="tabledata">
+              
+            <button class="small button function">
+                <a asp-page="./Details" asp-route-id="@item.Id">Detaljer</a> 
+                    </button>
+              
+
+            </td>
+        </tr>
+        }
+        
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.CreateCustomerByCustomerModel
+
+@{
+    ViewData["Title"] = "CreateCustomerByCustomer";
+}
+
+<h2 class="tabledata">Skapa ny användare</h2>
+
+<h4 class="tabledata">Fyll i dina uppgifter</h4>
+<hr />
+<div>
+    <form method="post" class="tabledata">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div>
+            <input asp-for="Customer.FirstName" class="input-form" placeholder="Ange förnamn" />
+            <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="Customer.LastName" class="input-form" placeholder="Ange efternamn" />
+            <span asp-validation-for="Customer.LastName" class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="Customer.Email" class="input-form" placeholder="Ange e-postadress" />
+            <span asp-validation-for="Customer.Email" class="text-danger"></span>
+        </div>
+        <div>
+            <input asp-for="Customer.Password" class="input-form" placeholder="Ange lösenord" />
+            <span asp-validation-for="Customer.Password" class="text-danger"></span>
+        </div>
+        <div>
+            <input type="submit" value="Skapa ny användare" class="small button function" />
+        </div>
+    </form>
+  
+    </div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

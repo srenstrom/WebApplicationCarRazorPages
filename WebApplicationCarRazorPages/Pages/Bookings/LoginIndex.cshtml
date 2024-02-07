@@ -1,0 +1,43 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.LoginIndexModel
+
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+
+
+    }
+<h1 class="tabledata">Välkommen @Html.DisplayFor(model => model.Customer.FirstName)!</h1>
+  
+    <hr />
+<table class="tabledata">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Customer.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.Customer.LastName)</th>
+        <th>@Html.DisplayNameFor(model => model.Customer.Email)</th>
+        <th>@Html.DisplayNameFor(model => model.Customer.Password)</th>
+    </tr>
+    <tr>
+        <td class="tabledata">@Html.DisplayFor(model => model.Customer.FirstName)</td>
+        <td class="tabledata">@Html.DisplayFor(model => model.Customer.LastName)</td>
+        <td class="tabledata">@Html.DisplayFor(model => model.Customer.Email)</td>
+        <td class="tabledata">@Html.DisplayFor(model => model.Customer.Password)</td>
+    </tr>
+</table>
+<br />
+<br />
+<div>
+    <div class="button function">
+    <a asp-page="./CreateBooking" asp-route-id="@Model.Customer?.CustomerId">Boka bil</a> 
+    </div>
+    <div class="button function">
+    <a asp-page="./CustomerViewBookings" asp-route-id="@Model.Customer?.CustomerId">Lista bokningar</a>
+    </div>
+    <div class="button function">
+    <a asp-page="/Index">Logga ut</a>
+    </div>
+
+</div>

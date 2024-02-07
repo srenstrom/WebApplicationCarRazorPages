@@ -1,0 +1,80 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.ViewBookingsModel
+
+@{
+    ViewData["Title"] = "ViewBookings";
+
+  }
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+
+
+}
+
+<h2 class="tabledata">Översikt bokningar</h2>
+
+
+<body>
+  
+   
+</body>
+<table class="tabledata">
+    <thead>
+        <tr>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking[0].BookingId)
+            </th >
+            <th class ="tabledata">
+                @Html.DisplayNameFor(model => model.Booking[0].Car.Brand)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking[0].Car.Model)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking[0].Customer)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking[0].StartDate)  @Html.DisplayNameFor(model => model.Booking[0].EndDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model.Booking) {
+            
+                <tr>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.BookingId)
+                </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Car.Brand)
+                </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Car.Model)
+                </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName) @Html.DisplayFor(modelItem => item.Customer.LastName)
+                </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.StartDate) | @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                
+                <td class="tabledata">
+             
+                   
+                    <button class="small button negative function">
+                <a asp-page="./DeleteBooking" asp-route-id="@item.BookingId">Radera</a>
+                </button>
+                   
+                    
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<button class="button function">
+    <a asp-page="./StartIndex">Tillbaka till översikt</a>
+</button>

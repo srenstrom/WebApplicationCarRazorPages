@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.CreateCustomerModel
+
+@{
+    ViewData["Title"] = "CreateCustomer";
+}
+
+
+
+<h2 class="tabledata">Lägg till kund</h2>
+<hr />
+<div class="tabledata">
+   
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+               
+                <input asp-for="Customer.FirstName" class="input-form" placeholder="Ange förnamn" />
+                <span asp-validation-for="Customer.FirstName"></span>
+            </div>
+            <div>
+                
+                <input asp-for="Customer.LastName" class="input-form" placeholder="Ange efternamn" />
+                <span asp-validation-for="Customer.LastName"></span>
+            </div>
+            <div>
+               
+                <input asp-for="Customer.Email" class="input-form" placeholder="Ange e-postadress" />
+                <span asp-validation-for="Customer.Email"></span>
+            </div>
+            <div>
+                
+                <input asp-for="Customer.Password" class="input-form" placeholder="Ange lösenord" />
+                <span asp-validation-for="Customer.Password"></span>
+            </div>
+            <div>
+                <input type="submit" value="Spara" class="small button function" />
+            </div>
+        </form>
+   
+</div>
+
+<button class="button function">
+    <a asp-page="ViewCustomers">Tillbaka till översikt</a>
+</button>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

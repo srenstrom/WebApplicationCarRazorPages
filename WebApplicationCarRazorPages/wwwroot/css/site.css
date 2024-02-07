@@ -1,0 +1,137 @@
+/*Direct stylings*/
+
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: helvetica;
+    color: #172023;
+    background-color: white;
+    margin-bottom: 200px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #E3EBEE;
+    padding: 5px;
+    margin-top: 50px;
+}
+
+/*Classes*/
+
+/*Styling for website-logo*/
+    .logo {
+    display: flex;
+    margin: 25px;
+    background-color: #E3EBEE;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    
+}
+
+/* Navbar */
+.navbar {
+   
+    
+    width: 100%;
+    background-color: white;
+}
+
+/*Unordered list*/
+    .navbar ul {
+        
+        list-style: none;
+        padding: 20px;
+        display: flex;
+    }
+
+/*Anchor-links*/
+    .navbar a {
+        display: block;
+        text-align: center;
+        padding: 1px 16px;
+        text-decoration: none;
+        color: #172023;
+        font-weight: bold;
+        border-radius: 50px;
+    }
+
+/*Puts admin-anchor-link at the right end of navbar*/
+    .right-aligned 
+    {
+    margin-left: auto;
+    }
+
+
+/*Styling for input-forms*/
+    .input-form {
+    outline: none;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border: solid;
+    border-color: #E3EBEE;
+    padding: 5px 5px;
+    border-radius: 5px;
+   
+    
+}
+
+/*Tabledata and tableheaders*/
+.tabledata, .th  {
+    margin: 20px;
+   align-items:center;
+    padding: 8px;
+}
+/*Table-row*/
+tr:nth-child(even) td {
+    background-color: #E3EBEE;
+    
+}
+
+
+/*Styling buttons*/
+.button a 
+{
+    text-decoration: none;
+    color: black;
+}
+
+.button:hover {
+    
+    background-color: white;
+    border-color: #FCBE30;
+    cursor: pointer;
+}
+
+.function {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: solid 2px;
+    border-color: #172023;
+    padding: 12px 12px;
+    border-radius: 30px;
+    display: inline;
+}
+
+.small {
+    margin: 0px;
+    padding: 8px;
+}
+
+.negative {
+    
+    background-color: #F2A637;
+    border-color: #F2A637;
+    
+}
+
+

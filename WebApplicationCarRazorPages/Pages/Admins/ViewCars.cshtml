@@ -1,0 +1,74 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="tabledata">Sortiment</h2>
+
+<button class="button function">
+    <a asp-page="CreateCar">Lägg till en ny bil</a>
+</button>
+<hr />
+<table class="tabledata">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].PricePerDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].PictureLink)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Car) {
+            <tr>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td class="tabledata">
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+                <td class="tabledata">
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.PricePerDay)
+                </td>
+                <td class="tabledata">
+                    <button class="small button function">
+                    <a href="@Html.DisplayFor(modelItem => item.PictureLink)" target="_blank">Visa bild</a>
+                    </button>
+                    
+                </td>
+            <td class="tabledata">
+                    <button class="small button function">
+                        <a asp-page="./EditCar" asp-route-id="@item.Id">Ändra bil</a>
+                    </button>
+                </td>
+                <td class="tabledata">
+
+                    <button class="small button negative function">
+                        <a asp-page="./DeleteCar" asp-route-id="@item.Id">Radera</a>
+                    </button>
+          
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<button class="button function">
+    <a asp-page="./StartIndex">Tillbaka till översikt</a>
+</button>

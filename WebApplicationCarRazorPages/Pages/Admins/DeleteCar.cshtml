@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+
+<div>
+    <h2 class="tabledata">Radera bil</h2>
+    <hr />
+    <table class="tabledata">
+        <tr>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Car.Id)
+            </th>
+           
+            <th>
+            @Html.DisplayNameFor(model => model.Car.Brand)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Car.Model)
+            </th>
+
+        <tr>
+            <td class="tabledata">
+                    @Html.DisplayFor(model => model.Car.Id)
+            </td>
+            <td class="tabledata">
+            @Html.DisplayFor(model => model.Car.Brand)
+            </td>
+        <td class="tabledata">
+            @Html.DisplayFor(model => model.Car.Model)
+        </td>
+  
+    </tr>
+    </table>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Car.Id" />
+        <input type="submit" value="Radera" class="button negative function" /> 
+        <button class="button function">
+        <a asp-page="./ViewCars">Tillbaka till bilöversikt</a>
+        </button>
+    </form>
+</div>

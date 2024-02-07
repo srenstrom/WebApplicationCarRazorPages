@@ -1,0 +1,61 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.CustomerDeleteBookingModel
+
+@{
+    ViewData["Title"] = "CustomerDeleteBooking";
+ 
+}
+
+<h2 class="tabledata">Bokning</h2>
+
+<div>
+    
+    <hr />
+    <table class="tabledata">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking.Car.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking.Car.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking.Car.PricePerDay)
+            </th>
+        </tr>
+        <tr>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.StartDate)
+            </td>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.EndDate)
+            </td>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.Car.Brand)
+            </td>
+              <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.Car.Model)
+            </td>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.Car.PricePerDay)
+            </td>
+        </tr>
+    </table>
+
+   
+    <form method="post">
+        <input type="hidden" asp-page="./CustomerDeleteBooking" asp-for="Booking.BookingId" />
+        <input type="submit" value="Radera" class="button function" /> 
+
+    </form>
+    <form method="post" asp-page="./CustomerViewBookings" asp-route-id="@Model.Booking.BookingId">
+        <button type="submit" class="button function">Tillbaka till kundprofil</button>
+    </form>
+ 
+</div>

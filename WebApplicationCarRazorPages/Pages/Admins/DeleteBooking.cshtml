@@ -1,0 +1,53 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.DeleteBookingModel
+
+@{
+    ViewData["Title"] = "DeleteBooking";
+   
+}
+
+
+<table class="tabledata">
+    
+        <tr>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking.BookingId)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking.Car.Brand)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking.Car.Model)
+            </th>
+            <th class="tabledata">
+                @Html.DisplayNameFor(model => model.Booking.Customer)
+            </th>
+        </tr>
+    
+   
+        <tr>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.BookingId)
+            </td>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.Car.Brand)
+            </td>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.Car.Model)
+            </td>
+            <td class="tabledata">
+                @Html.DisplayFor(model => model.Booking.Customer.FirstName) @Html.DisplayFor(model => model.Booking.Customer.LastName)
+            </td>
+        </tr>
+    
+</table>
+
+
+<form method="post">
+    <input type="hidden" asp-for="Booking.BookingId" />
+    <input type="submit" value="Radera" class="button negative function" />
+</form>
+<button class="button function">
+<a asp-page="./ViewBookings">Tillbaka till bokningsöversikt</a>
+</button>
+

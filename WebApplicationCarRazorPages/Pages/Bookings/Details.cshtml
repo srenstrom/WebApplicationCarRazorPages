@@ -1,0 +1,56 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+  
+}
+
+<h2 class="tabledata">Detaljvy</h2>
+
+<div>
+ <hr />
+    <table class="tabledata">
+            <thead>
+                <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Car.Id)
+                </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.Brand)
+                    </th>                  
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.Model)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Car.PricePerDay)
+                    </th>
+                </tr>
+            </thead>
+           
+            <tbody>
+                <tr >
+                <td class="tabledata">
+                    @Html.DisplayFor(model => model.Car.Id)
+                </td>
+                    <td class="tabledata">
+                        @Html.DisplayFor(model => model.Car.Brand)
+                    </td>
+                <td class="tabledata">
+                        @Html.DisplayFor(model => model.Car.Model)
+                    </td>
+                <td class="tabledata">
+                        @Html.DisplayFor(model => model.Car.PricePerDay)
+                    </td>
+                </tr>
+            </tbody>
+                    
+        </table>
+ 
+</div>
+<button class="function button">
+<a asp-page="./CustomerViewCars">Tillbaka till översikt</a>
+</button>
+<button class="function button">
+    <a href="@Model.Car.PictureLink" target="_blank">Visa Bild</a>
+</button>

@@ -1,0 +1,45 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.LoginIndexModel
+
+@{
+    ViewData["Title"] = "LoginIndex";
+
+
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<h2 class="tabledata">Logga in</h2>
+
+
+<hr />
+<div>
+    <div>
+        <form method="post" class="tabledata">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+               
+                <input asp-for="Admin.Email" class="input-form" placeholder="Ange e-postadress" />
+                <span asp-validation-for="Admin.Email"></span>
+            </div>
+            <div>
+                
+                <input asp-for="Admin.Password" class="input-form" placeholder="Ange lösenord" />
+                <span asp-validation-for="Admin.Password"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Logga in" class="small button function" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

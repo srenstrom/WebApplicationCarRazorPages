@@ -1,0 +1,46 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.CreateBookingModel
+
+@{
+    ViewData["Title"] = "CreateBooking";
+}
+
+
+<h2 class="tabledata">Bokningsvy</h2>
+
+<h4 class="tabledata">Ange ett befintligt bil-id, du hittar dessa listade under "Våra bilar"</h4>
+<hr />
+<div>
+    <form method="post" class="tabledata">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Booking.Customer.CustomerId" />
+
+        <div>
+            <input type="text" asp-for="Booking.Car.Id" class="input-form" placeholder="Ange ett bil-id" autocomplete="off" />
+            <span asp-validation-for="Booking.Car" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-placeholder-for="Booking.EndDate">Ange startdatum</label><br />
+            <input type="date" class="input-form" asp-for="Booking.StartDate" min="@DateTime.Today.ToString("yyyy-MM-dd")">
+            <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-placeholder-for="Booking.EndDate">Ange slutdatum</label><br />
+            <input type="date" class="input-form" asp-for="Booking.EndDate" min="@DateTime.Today.ToString("yyyy-MM-dd")">
+             <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
+        </div>
+
+        <div>
+            <input type="submit" value="Skapa bokning" class="small button function" />
+        </div>
+    </form>
+       </div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplicationCarRazorPages</title>
+   
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplicationCarRazorPages.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/28702715b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div style="text-align: center;">
+        
+        <h2 class="tabledata">Välkommen till Friberg Car Rentals!</h2>
+        <hr />
+    </div>
+    <header>
+        <nav class="navbar">
+            
+                    <ul>
+                
+                        <li>
+                    <a asp-area="" asp-page="/Index"><i class="fa-solid fa-house" style="color: #FCBE30;"></i> Startsida</a>
+                        </li>
+                       
+                        </li>
+                        <li>
+                    <a href="/Bookings/CustomerViewCars"><i class="fa-solid fa-car" style="color: #FCBE30;"></i> Våra bilar</a>
+                            
+                        </li>
+                <li>
+                    <a href="/Bookings/LoginCustomer"><i class="fa-solid fa-user" style="color: #FCBE30;"></i> Logga in</a>
+
+                </li>
+                <li class="links">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Om</a>
+                </li>
+                <li class="right-aligned">
+                    <a href="/Admins/LoginIndex"><i class="fa-solid fa-hat-wizard" style="color: #FCBE30;"></i> Admin</a>
+                 
+                </li>
+                    </ul>
+                    </nav>
+        <div class="logo"><img src="~/css/FribergCarRentals.png" alt="A car with fire in the background" class="border logo"></div>
+    </header>
+    <div>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer >
+        
+            &copy; 2024 - Friberg Car Rentals
+        
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+   
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Bookings.CustomerViewBookingsModel
+
+@{
+    TempData["Title"] = "CustomerViewBookings";
+    var errorMessage = ViewData["ErrorMessage"] as string;
+}
+
+@if (TempData["ErrorMessage"] != null)
+   {
+       <div class="alert alert-danger">
+           @TempData["ErrorMessage"]
+        </div>
+    }
+
+<h2 class="tabledata">Översikt bokningar</h2>
+
+<form method="post" asp-route-id="@Model.Booking[0].BookingId">
+    <button class="button function">Tillbaka till kundprofil</button>
+</form>
+
+<table class="tabledata">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].BookingId)
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Car.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Car.Model)
+            </th>
+        
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].StartDate) @Html.DisplayNameFor(model => model.Booking[0].EndDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        
+
+        @foreach (var item in Model.Booking)
+        {
+            <tr>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.BookingId)
+                </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Car.Brand)
+                </td>
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.Car.Model)
+                </td>
+           
+                <td class="tabledata">
+                    @Html.DisplayFor(modelItem => item.StartDate) @Html.DisplayFor(modelItem => item.EndDate)
+                
+                </td>
+
+                <td class="tabledata">
+               
+                    <button class="small button negative function">
+                        <a asp-page="./CustomerDeleteBooking" asp-route-id="@item.BookingId">Radera bokning</a>
+                    </button>
+                 
+                </td>
+            </tr>
+        }
+    
+
+    </tbody>
+</table>
+

@@ -1,0 +1,50 @@
+﻿@page
+@model WebApplicationCarRazorPages.Pages.Admins.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<h2 class="tabledata">Ändra bil</h2>
+<hr />
+<div>
+    
+        <form method="post" class="tabledata">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Car.Id" />
+            <div>
+                
+                <input asp-for="Car.Brand" class="input-form" placeholder="Ändra tillverkare" />
+                <span asp-validation-for="Car.Brand"></span>
+            </div>
+            <div>
+                
+                <input asp-for="Car.Model" class="input-form" placeholder="Ändra märke" />
+                <span asp-validation-for="Car.Model"></span>
+            </div>
+            <div>
+
+                <input asp-for="Car.PictureLink" class="input-form" placeholder="Ändra bildlänk" />
+                <span asp-validation-for="Car.Model"></span>
+            </div>
+            <div>
+
+                <input asp-for="Car.PricePerDay" class="input-form" placeholder="Ändra pris/dag" />
+                <span asp-validation-for="Car.Model"></span>
+            </div>
+            <div>
+                <input type="submit" value="Spara" class="small button function" />
+            </div>
+        </form>
+   
+</div>
+
+<button class="button function">
+    <a asp-page="./ViewCars">Tillbaka till bilöversikt</a>
+</button>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
