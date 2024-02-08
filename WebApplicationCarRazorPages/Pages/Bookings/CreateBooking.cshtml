@@ -21,7 +21,7 @@
         </div>
 
         <div>
-            <label asp-placeholder-for="Booking.EndDate">Ange startdatum</label><br />
+            <label asp-placeholder-for="Booking.StartDate">Ange startdatum</label><br />
             <input type="date" class="input-form" asp-for="Booking.StartDate" min="@DateTime.Today.ToString("yyyy-MM-dd")">
             <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
         </div>

@@ -24,8 +24,8 @@ namespace WebApplicationCarRazorPages.Pages.Bookings
 
         public async Task<IActionResult> OnGetAsync(Customer customer)
         {
-            var loggedInCustomer = customerRep.GetByCustomerId(customer.CustomerId);
-            if (loggedInCustomer == null)
+            
+            if (customer == null)
             {
                 return NotFound();
             }
@@ -43,10 +43,10 @@ namespace WebApplicationCarRazorPages.Pages.Bookings
         //        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync(Customer customer)
         {
-            var loggedInCustomer = customerRep.GetByCustomerId(customer.CustomerId);
-            if (loggedInCustomer != null)
+            
+            if (customer != null)
             {
-                return RedirectToPage("LoginIndex", loggedInCustomer);
+                return RedirectToPage("LoginIndex", customer);
             }
             return NotFound();
 
