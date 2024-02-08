@@ -5,7 +5,7 @@
          Customer CheckCustomerUser(string userName, string passWord);
 
         Task<IEnumerable<Car>> GetAllCars();
-        //Task<Car> GetById(int id);
+      
         Car GetById(int id);
 
         public Customer GetByCustomerId(int? id);

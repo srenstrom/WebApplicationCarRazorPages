@@ -21,14 +21,9 @@ namespace WebApplicationCarRazorPages.Data
         [Display(Name = "E-postadress")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Obligatoriskt fält.")]
+        [MinLength(4, ErrorMessage = "Lösenordet måste vara minst 4 tecken långt.")]
         [Display(Name = "Lösenord")]
         public string Password { get; set; }
 
-        //public List<Booking> Bookings { get; set; }
-
-        //public Customer()
-        //{
-        //    Bookings = new List<Booking>();
-        //}
     }
 }

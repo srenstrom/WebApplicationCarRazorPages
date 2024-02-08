@@ -6,9 +6,11 @@ namespace WebApplicationCarRazorPages.Data
     {
         public int AdminId { get; set; }
 
-        [Required(ErrorMessage = "E-postadressen är obligatorisk.")]
+        [Required(ErrorMessage = "Obligatoriskt fält")]
         [EmailAddress(ErrorMessage = "Ogiltig e-postadress.")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Obligatoriskt fält")]
         public string Password { get; set; }
 
     }
