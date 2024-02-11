@@ -22,10 +22,8 @@ namespace WebApplicationCarRazorPages.Pages.Bookings
 
         public async Task<IActionResult> OnGetAsync(Customer customer)
         {   
-            var loggedInCustomer = customerRep.GetByCustomerId(customer.CustomerId);
-
-            
-            if (loggedInCustomer == null)
+                        
+            if (customer == null)
             {
                 return NotFound();
             }
